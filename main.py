@@ -59,14 +59,28 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-        "client_id": GOOGLE_OAUTH_CLIENT_ID,
-        "project_id": GOOGLE_PROJECT_ID,
-        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-        "token_uri": "https://oauth2.googleapis.com/token",
-        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-        "client_secret": GOOGLE_OAUTH_CLIENT_SECRET,
-        "redirect_uris": [
-            "http://localhost:3000",
+# 환경 변수 설정
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID")
+GOOGLE_CLIENT_SECRET = os.getenv("GOOGLE_CLIENT_SECRET")
+REPLICATE_API_TOKEN = os.getenv("REPLICATE_API_TOKEN")
+YOUTUBE_API_KEY = os.getenv("YOUTUBE_API_KEY")
+JWT_SECRET = os.getenv("JWT_SECRET")
+
+# Google OAuth 설정
+OAUTH_CONFIG = {
+    "client_id": GOOGLE_CLIENT_ID,
+    "project_id": "autovid-project",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_secret": GOOGLE_CLIENT_SECRET,
+    "redirect_uris": [
+        "http://localhost:3000",
+        "http://localhost:5173",
+        "http://127.0.0.1:3000"
+    ]
+}
 
 # Replicate 초기화
 if REPLICATE_API_TOKEN:
