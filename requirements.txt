@@ -1,0 +1,31 @@
+# AutoVid Full Backend Dependencies
+# 원본 AutoVid Windows Store 앱 완전 복제
+
+# FastAPI 및 웹 서버
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+python-multipart>=0.0.6
+
+# Google Cloud Services
+google-generativeai>=0.3.0
+google-cloud-texttospeech>=2.14.0
+google-cloud-storage>=2.10.0
+
+# 데이터 처리
+pydantic>=2.5.0
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.0
+
+# 환경 설정
+python-dotenv>=1.0.0
+
+# HTTP 요청
+requests>=2.31.0
+httpx>=0.25.0
+
+# 유틸리티
+aiofiles>=23.2.0
+
+# JWT 인증
+PyJWT>=2.8.0
+cryptography>=41.0.0
